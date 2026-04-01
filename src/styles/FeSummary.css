@@ -1,0 +1,274 @@
+.FeSummary-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 140px 0px 20px 0px;
+    text-align: center;
+    background-color: #ffffff;
+    min-height: 200vh;
+  }
+  
+  
+  .FeSummary-wrapper h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    max-width: 50%; 
+    margin: 0 auto; 
+    word-wrap: break-word; 
+    text-align: center; 
+    margin-top: -100px; /* Negative margin to move it upwards */
+   
+    
+  }
+
+
+  .Card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin-top: 20px; 
+    text-align: center;
+    min-height: 800px;
+  }
+
+/*.scale-image {
+    width: 370px; 
+    height: auto;  
+    margin-top: 100px; 
+  }*/
+
+
+.Card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin-top: 20px;
+    text-align: center;
+    min-height: 760px;
+}
+
+.bmi-header {
+    background-color: #fde0dc; /* Peach color */
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    min-height: 230px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 110%;
+    margin-left: -20px;
+    margin-top: -20px;
+   
+ }
+
+.bmi-header h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+    margin-top: -90px;
+}
+
+.bmi-header p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin: 5px 0 0 0;
+}
+
+.scale-image {
+    width: 450px;
+    height: auto;
+    margin-top: -90px;
+    margin-left: -30px;
+}
+
+
+.bmi-header1 h5{
+  font-size: 1rem;   
+    width: 105%;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    
+}
+
+.bmi-header1 span{
+
+  font-size: 1rem; 
+  font-weight: bold;  
+}
+
+
+.person-details-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.person-image img {
+  width: 300px; /* Adjust image size */
+  height: 540px;
+  margin-left: 20px;
+  margin-bottom: -23px;
+  margin-top: -20px;
+ 
+}
+
+/* Align details next to the person image */
+.details-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  text-align: left;
+  margin-top: 120px;
+}
+
+/* Icon and text layout */
+.detail-item {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Space between icon and text */
+  text-align: left;
+  margin-bottom: 10px; /* Add spacing between rows */
+
+}
+
+.detail-item img.icon {
+  width: 40px;
+  height: auto;
+}
+
+.detail-item p {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(116 116 116);
+}
+
+.detail-item span {
+  font-weight: 500;
+  color: #333;
+
+}
+
+/* Icon box styling */
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+
+.FeSummary-button {
+  padding: 15px 40px;
+  background-color: #004d40;
+  color: white;
+  padding: 15px; 
+  width: 450px;
+  border: none;
+  border-radius: 10px ;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Positioning context for the arrow */
+  justify-content: center; /* Center content horiz*/
+  margin-top: 30px;
+  margin-left: 0px;
+}
+
+.FeSummary-button:hover {
+  background-color: #00382F;
+}
+
+
+.FeSummary-button span {
+  position: absolute; /* Adjust the gap between text and arrow */
+  font-size: 2rem;
+  right: 20px;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .Card {
+      width: 90%; /* Make cards full width on smaller screens */
+      margin: 10px 0; /* Add margin between cards */
+  }
+
+  .bmi-header {
+      width: 100%; /* Adjust header width */
+      margin-left: 0; /* Remove negative margin */
+      margin-top: 0; /* Remove negative margin */
+  }
+
+  .scale-image {
+      width: 100%; /* Make image responsive */
+      margin-top: -60px; /* Adjust margins for smaller screens */
+  }
+
+  .person-details-wrapper {
+      flex-direction: column; /* Stack details vertically */
+      align-items: center; /* Center items */
+  }
+
+  .person-image img {
+      width: 100%; /* Make image responsive */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0; /* Reset margins */
+  }
+
+  .details-text {
+      margin-top: 20px; /* Adjust top margin */
+      text-align: center; /* Center text for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .FeSummary-button {
+      width: 100%; /* Full width for buttons on very small screens */
+      padding: 12px; /* Adjust padding */
+      font-size: 1rem; /* Adjust font size */
+     
+  }
+
+  .FeSummary-wrapper h2 {
+      font-size: 1.8rem; /* Adjust heading size */
+      margin-top:100px;
+  }
+
+  .bmi-header h3 {
+      font-size: 1rem; /* Adjust subheading size */
+  }
+
+  .bmi-header p {
+      font-size: 1.5rem; /* Adjust paragraph size */
+  }
+
+  .detail-item p {
+      font-size: 1rem; /* Adjust detail text size */
+  }
+
+
+  .scale-image {
+    width: 100%; /* Make image responsive */
+    margin-top: -100px;
+    margin-right: -15px;
+  }
+}
+
+

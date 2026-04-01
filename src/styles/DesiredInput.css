@@ -1,0 +1,145 @@
+.Desired-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #fff;
+  margin: 0 auto;
+  max-width: 90%; /* Responsive container width */
+  padding-top: 10%;
+  min-height: calc(100vh - 10rem); /* Responsive height */
+}
+
+.Desired-input-container h1{
+  max-width: 30%; /* Consistent width for all elements */
+  margin: 0 auto; /* Center alignment */
+}
+
+
+.Desired-input-box,
+.Desired-button {
+  max-width: 22%; /* Consistent width for all elements */
+  margin: 0 auto; /* Center alignment */
+  margin-top: 0.5rem; /* Add a small margin on top to move it slightly down */
+}
+
+.Desired-input-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+  text-align: center;
+  padding: 0 1rem; /* Ensure padding matches input box */
+  margin-top: 0.5rem; /* Add a small margin on top to move it slightly down */
+ 
+}
+
+.Desired-input-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f3f3;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem; /* Same padding as h1 */
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  width: 100%; /* Match the width of h1 */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  
+}
+
+.Desired-input-box input {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 70%;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+.Desired-input-box span {
+  margin-left: -0.5rem;
+  font-size: 1rem;
+  color: #777;
+}
+
+.Desired-button {
+  padding: 1rem 2rem;
+  background-color: #004d40;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center content */
+  margin-top: 2rem;
+  width: 100%; /* Match the width of h1 */
+  box-sizing: border-box; /* Include padding in the width */
+  position: relative; /* Ensure proper alignment */
+}
+
+.red-message {
+  color: red;
+  margin-bottom: 0.2rem;
+  font-size: 12px;
+  text-align: center; 
+}
+
+
+.Desired-button:hover {
+  background-color: #00382F;
+}
+
+.arrow-on {
+  font-size: 2rem;
+  position: absolute; /* To align arrow to the right */
+  right: 1rem; /* Adjust the arrow's position to the right */
+}
+
+  
+
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 480px) {
+  .Desired-input-container {
+    max-width: 100%;
+    padding-top: 5%;
+    min-height: calc(100vh - 8rem); /* Adjust height for small screens */
+  }
+
+  .Desired-input-container h1 {
+    font-size: 1.5rem; /* Smaller heading on mobile */
+    max-width: 80%; /* Allow more width on small screens */
+    margin-top: 5rem; /* Increase margin on small screens */
+  }
+
+  .Desired-input-box,
+  .Desired-button {
+    max-width: 80%; /* Make the elements wider on mobile */
+  }
+
+  .Desired-input-box {
+    font-size: 1.2rem; /* Smaller input box font */
+    padding: 0.3rem 0.8rem; /* Adjust padding for better fit */
+  }
+
+  .Desired-input-box input {
+    font-size: 1.5rem; /* Slightly smaller input text */
+  }
+
+  .Desired-button {
+    padding: 0.8rem 1.5rem; /* Adjust button padding */
+    font-size: 1rem; /* Smaller button font */
+  }
+
+  .Desired-button span {
+    font-size: 1.5rem; /* Adjust the arrow icon size */
+    right: 0.8rem; /* Adjust icon position */
+  }
+
+  .red-message {
+    font-size: 10px; /* Smaller font for warning message */
+  }
+}

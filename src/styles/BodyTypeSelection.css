@@ -1,0 +1,114 @@
+ *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .fe-body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .fe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+   
+   
+  }
+  
+  .fe-container h1 {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    padding-top: 90px;
+    max-width: 500px;
+    margin-left: -10px;
+  }
+
+  .fe-goal-list {
+    list-style: none;
+    padding: 20px;
+    margin-top: -2rem;
+  }
+
+
+.fe-goal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  background-color:#F9F9F9; /* Initial gray color */
+  border: 2px solid #f9f9f9fb;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  height: 120px; /* Fixed height for container */
+  transition: background-color 0.3s ease;
+}
+
+
+.fe-goal-item:hover {
+  background-color: rgba(0, 128, 0, 0.1);
+  border: 1px solid #004d40; /* Apply the desired border color*/
+ 
+}
+
+
+.fe-arrow {
+  font-size: 3rem;
+  color: #555;
+  margin-left: 10rem;/* Space between arrow and right edge */
+  
+}
+
+
+
+.fe-goal-item img {
+  width: 130px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 40px; /* Add some spacing between image and text */
+  object-fit: cover;
+}
+
+
+
+@media (max-width: 480px) {
+
+  .fe-container {
+    height: auto;
+    padding: 70px;
+  }
+
+  .fe-container h1 {
+      font-size: 1.5rem; /* Smaller font size for mobile */
+      padding-top: 20px; /* Further reduce top padding */
+  }
+
+
+  .fe-goal-item {
+      font-size: 0.9rem; /* Smaller font size for goal items */
+      padding: 0.5rem; /* Adjust padding for smaller touch targets */
+      width: 100%; /* Reduce width for mobile screens */
+        max-width: 400px; /* Optional: set a max-width */
+    }
+  
+  .fe-goal-item img {
+    width: 130px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 30px; /* Add some spacing between image and text */
+    object-fit: cover;
+  }
+  
+
+
+  .fe-arrow {
+      font-size: 1.5rem; /* Further reduce arrow size for small screens */
+      margin-left: 4rem;
+    }
+}
+

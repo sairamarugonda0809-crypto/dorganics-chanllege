@@ -1,0 +1,103 @@
+/* General styling for the container */
+.routine-Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Styling the main heading */
+.routine-Heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  max-width: 320px; /* Adjust the width as needed */
+  margin: 50px auto 10px; /* Combines top, horizontal, and bottom margins */
+  word-wrap: break-word; /* Ensures long words break if necessary */
+  text-align: center; /* Centers the text */
+}
+
+/* Styling the subheading */
+.routine-Subheading {
+  font-size: 1.1rem;
+  max-width: 400px;
+  margin-bottom: 40px;
+  font-weight: 400;
+  text-align: center; /* Ensures consistent centering */
+}
+
+/* Styling for the buttons container */
+.routine-Options {
+  width: 80%; /* Adjusted for smaller screens */
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styling individual buttons */
+.routine-Button {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.routine-Button.selected {
+  background-color: #eefaf1;
+  border-color: #007600;
+}
+
+/* Arrow icon inside the button */
+.aRrow {
+  font-size: 1.5rem;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* Button hover arrow effect */
+.routine-Button:hover .aRrow {
+  transform: translateX(5px);
+}
+
+/* Responsive styling for mobile screens (320px - 480px) */
+@media (max-width: 480px) {
+  .routine-Container {
+      padding: 20px 10px;
+  }
+
+  .routine-Heading {
+      font-size: 1.5rem; /* Adjusted for mobile */
+      margin-bottom: 8px;
+  }
+
+  .routine-Subheading {
+      font-size: 1rem; /* Adjusted for mobile */
+      margin-bottom: 20px;
+  }
+
+  .routine-Options {
+      width: 90%; /* Full width for mobile */
+  }
+
+  .routine-Button {
+      padding: 12px 16px; /* Adjusted for mobile */
+      font-size: 0.95rem; /* Smaller font size for mobile */
+  }
+
+  .aRrow {
+      font-size: 1.2rem; /* Smaller arrow icon */
+  }
+}

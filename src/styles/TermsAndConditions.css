@@ -1,0 +1,55 @@
+.terms-container {
+    padding-left: 120px;
+    padding-top: 60px; /* Add some padding around the content */
+    font-family: Arial, sans-serif; /* Use the same font as the design */
+    padding-right: 140px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    text-align: start; /* Center the main heading */
+    font-size: 30px; /* Increase font size for the title */
+    margin-bottom: 20px; /* Space below the title */
+    font-weight: 250;
+}
+strong{
+    font-weight: 100;
+    font-size: 15px; 
+   
+}
+
+li{
+
+    font-weight: 100;
+    font-size: 15px; 
+    line-height: 2.5; /* Improve readability */
+
+}
+ul {
+    padding-left: 0px; /* Indent ordered list */
+    
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .terms-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+        padding-top: 50px;
+        
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Reduce heading size on smaller screens */
+    }
+
+
+    
+    li, ul {
+        font-size: 0.9rem;
+        padding-top: 10px;
+        line-height: 20px;
+        
+        
+      }
+}

@@ -1,0 +1,74 @@
+.user-selection-container {
+  max-width: 900px;
+  margin: 130px auto; 
+  font-family: "Segoe UI", sans-serif;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  padding-top: 20px;
+}
+
+.title {
+  font-size: 35px;
+  font-weight: bold;
+    color: black;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Match button font */
+}
+
+.data-card {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+  padding: 14px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #efefef;
+  color: #444;
+  font-weight: 600;
+}
+
+.data-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.next-button {
+  background-color: #004d40;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-button:hover {
+  background-color: #00332e;
+}
+
+.arrow {
+  position: absolute; /* Adjust the gap between text and arrow */
+  font-size: 2rem;
+  right: 20px;
+  color: white;
+  margin-bottom: 10px;
+}

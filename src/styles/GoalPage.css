@@ -1,0 +1,94 @@
+/* General styling for the container */
+.goal-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Styling the main heading */
+.content {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: -30px;
+  color: #333;
+  max-width: 90%; /* You can adjust this width as needed */
+  margin: 0 auto; /* Centers the heading */
+  word-wrap: break-word; /* Ensures long words break if necessary */
+  text-align: center; /* Optional: Centers the text */
+  margin-top: -150px;
+}
+
+/* Styling for the buttons container */
+.goal-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Styling individual buttons */
+.goal-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  color: #333;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Button hover effect */
+.goal-item:hover {
+  background-color: #eefaf1;
+  border-color: #007600;
+}
+
+/* Arrow icon inside the button */
+.arrow {
+  font-size: 1.5rem;
+  color: #333;
+  transition: transform 0.3s ease;
+}
+
+/* For button hover arrow effect */
+.goal-item:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Mobile responsiveness for screens between 320px and 468px */
+@media (max-width: 468px) and (min-width: 320px) {
+  .goal-page-container {
+    padding: 4rem 1.5rem; /* Adjust padding for mobile */
+  }
+
+  .content {
+    font-size: 2rem; /* Slightly smaller font size */
+    margin-top: -09rem; /* Adjust top margin for mobile */
+  }
+
+  .goal-list {
+    max-width: 100%;
+    gap: 0.8rem; /* Reduce gap between buttons */
+  }
+
+  .goal-item {
+    padding: 1rem 1.2rem; /* Adjust button padding */
+    font-size: 1rem; /* Reduce font size */
+  }
+
+  .arrow {
+    font-size: 1.2rem; /* Smaller arrow icon */
+  }
+}

@@ -1,0 +1,130 @@
+
+
+.PeakPerformance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    flex-direction: column;
+    width: 100%;
+  
+
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 30%;
+    margin-top: 165px; /* Margin to space the button from the card */
+    text-align: center;
+    min-height: 200px;
+  }
+  .Image-container {
+    background-color: rgb(212 230 219) ;/* Light green background */
+    border-radius: 5px;
+
+    min-height: 260px;
+    padding: 10x; /* Padding for space inside the container */
+}
+  
+  .card-image {
+    width: 280px;
+    height: 300px;
+    border-radius: 5px;
+    margin-top: 0px;
+    margin-bottom: -4px;
+  }
+  
+  .card-title  {
+    font-size: 1.6rem;
+    color: black;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    color: black;
+    font-weight: 400;
+    margin-top: -50px;
+  }
+  
+  .Peak-button {
+    padding: 15px 40px;
+    background-color: #004d40;
+    color: white;
+    padding: 15px; 
+    width: 450px;
+    border: none;
+    border-radius: 10px ;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Positioning context for the arrow */
+    justify-content: center; /* Center content horiz*/
+    margin-top: 20px;
+    margin-bottom: 60px;
+    
+    
+  }
+  
+  .Peak-button:hover {
+    background-color: #00382F
+  }
+  
+  .Peak-button span{
+    position: absolute; /* Adjust the gap between text and arrow */
+    font-size: 2rem;
+    right: 20px;
+  }
+
+
+
+  @media (max-width: 768px) { /* Tablet and smaller devices */
+    .card {
+      width: 80%; /* Increase width for better layout */
+      margin-top: 100px; /* Reduce top margin */
+    }
+  
+    .card-title {
+      font-size: 1.4rem; /* Adjust font size */
+    }
+  
+    .card-description {
+      font-size: 0.9rem; /* Adjust font size */
+    }
+  
+    .Peak-button {
+      padding: 12px 30px; /* Reduce padding */
+      font-size: 1rem; /* Adjust font size */
+    }
+  }
+  
+  @media (max-width: 480px) { /* Mobile devices */
+    .card {
+      width: 88%; /* Almost full width on mobile */
+      margin-top: 130px; /* Further reduce top margin */
+      
+      margin-right: 0px; /* Center card */
+    
+    }
+  
+    .card-title {
+      font-size: 1.2rem; /* Further adjust font size */
+    }
+  
+    .card-description {
+      font-size: 0.8rem; /* Further adjust font size */
+    }
+  
+    .Peak-button {
+      padding: 12px 20px; /* Reduce button padding */
+      font-size: 1rem; /* Smaller font size */
+      width: 250px;
+      padding: 15px; 
+      margin-right: 0px;
+    }
+  }

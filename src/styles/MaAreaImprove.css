@@ -1,0 +1,213 @@
+.area-body {
+  font-family: Arial, sans-serif;
+}
+
+.area-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 130vh;
+}
+
+.area-container h1 {
+  font-size: 35px;
+  margin-bottom: -10px;
+  font-weight: bold;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.area-container p {
+  font-size: 1.1rem;
+  padding-top: 10px;
+  line-height: 23px;
+  font-weight: 400;
+}
+
+.body-image-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; /* Adjust the size of the body image */
+  max-height: 400px; /* Set a maximum height for the image */
+}
+
+.body-image-container img {
+  max-width: 150%; /* Ensure the image is responsive */
+  max-height: 125%; /* Ensure the image height does not exceed the container */
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.body-part-button {
+  position: absolute;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  transition: transform 0.3s ease;
+  border: 1px solid #004d40;
+}
+.body-part-button:hover {
+  border: 1px solid #00332a; /* Green border when hovered */
+  background-color: rgba(0, 128, 0, 0.1); /* Faint green background */
+}
+
+.Chest-button {
+  top: 30%;
+  left: -70px;
+}
+
+.Glutes-button {
+  top: 60%;
+  left: -80px;
+}
+
+.Arms-button {
+  top: 16%;
+  right: -50px;
+}
+
+.Abs-button {
+  top: 40%;
+  right: -60px;
+}
+
+.Thighs-button {
+  bottom: 24%;
+  right: -70px;
+}
+
+.net-button {
+  margin-top: 120px;
+  background-color: #004d40;
+  color: white;
+  padding: 15px;
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Positioning context for the arrow */
+  justify-content: center; /* Center content horizontally */
+}
+
+.net-button-disabled {
+  margin-top: 120px;
+  background-color: #004d40;
+  color: white;
+  padding: 15px;
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  position: relative; /* Positioning context for the arrow */
+  justify-content: center; /* Center content horizontally */
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.arrow-icon {
+  position: absolute; /* Adjust the gap between text and arrow */
+  font-size: 2rem;
+  right: 20px;
+}
+
+.net-button:hover {
+  background-color: #00332a;
+}
+
+.circle {
+  display: inline-block;
+  width: 20px; /* Circle width */
+  height: 20px; /* Circle height */
+  border-radius: 50%; /* Makes it round */
+  background-color: black; /* Background color of the circle */
+  color: #f0f0f0;
+  text-align: center;
+  line-height: 18px; /* Centers the '+' vertically */
+  margin-right: 5px; /* Space between circle and text */
+  font-weight: bold; /* Make the '+' bold */
+}
+
+.Chest {
+  position: absolute;
+  top: 2.5%; /* Adjust based on image */
+  right: 4%; /* Adjust based on image */
+}
+
+.Glute {
+  position: absolute;
+  right: 5%; /* Adjust based on image */
+  top: 7%;
+}
+
+.Arms {
+  position: absolute;
+  top: -1%; /* Adjust based on image */
+  right: 5%; /* Adjust based on image */
+}
+
+.Abs {
+  position: absolute;
+  top: 6%; /* Adjust based on image */
+  right: 0%; /* Adjust based on image */
+  height: 800%;
+}
+
+.Thigh {
+  position: absolute;
+  top: 6%; /* Adjust based on image */
+  right: 0%; /* Adjust based on image */
+}
+
+@media (max-width: 480px) {
+  .area-container {
+    height: auto;
+    padding-top: 60px;
+  }
+
+  .area-container h1 {
+    font-size: 2rem;
+    padding-top: -5%;
+  }
+
+  .area-container p {
+    padding-left: 40px;
+    font-size: 1rem;
+  }
+  .body-part-button {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+
+  .body-image-container img {
+    max-width: 80%;
+    max-height: 124%;
+    object-fit: contain;
+  }
+
+  .net-button {
+    width: 300px;
+    margin-bottom: 50px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .area-container h1 {
+    padding-top: 20px; /* Adjust heading top padding if needed */
+    margin-top: -400px;
+  }
+
+  .net-button {
+    width: 350px;
+  }
+}

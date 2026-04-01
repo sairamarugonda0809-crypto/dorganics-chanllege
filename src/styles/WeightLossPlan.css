@@ -1,0 +1,164 @@
+.weight-loss-plan {
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+
+  
+  .weight-plan-heading{
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+  
+  }
+  
+  .sub-heading {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  .sub-heading strong{
+    font-size: 1em;
+    color: #666;
+    font-weight: bold;
+
+  }
+  .quiz-text {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .quiz-text  strong{
+    color: #000;
+     font-weight: bold;
+  }
+  
+
+
+  .age-groups {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .age-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .age-group-img {
+    width: 200px;
+    height: auto;
+    border-radius: 100px 100px 0px 0px; /* Tablet-like curved ends */
+    background-color: rgba(0, 128, 0, 0.1); /* Faint transparent green background */
+    transition: all 0.3s ease;
+  }
+  
+  .age-button {
+    position: absolute;
+    bottom: -30px;
+    padding: 10px 80px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  /* Adjust button placement */
+  .age-button {
+    margin-top: -20px; /* Slightly above the image */
+  }
+  
+  /* Hover effect for the image */
+  .age-group-img:hover {
+    background-color: rgba(0, 128, 0, 0.2); /* Slightly stronger green on hover */
+    transform: scale(1.05);
+  }
+  
+  /* Hover effect for buttons to scale slightly */
+  .age-button:hover {
+    transform: scale(1.05);
+  }
+  
+
+
+  .weight-loss-plan {
+    text-align: center;
+    padding-top: 150px;
+}
+
+.main-heading {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.sub-heading {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.sub-heading strong {
+    font-size: 1em;
+    color: #666;
+    font-weight: bold;
+}
+
+.quiz-text {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #666;
+}
+
+.quiz-text strong {
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* Responsive Styles */
+
+
+@media (max-width: 768px) {
+  .age-groups {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .age-group-img {
+    width: 40px; /* Smaller image for mobile screens */
+  }
+  .age-button {
+    padding: 4px 10px; /* Adjust button padding */
+  }
+
+
+}
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .age-groups {
+    flex-direction: column; /* Keep it row-oriented for tablets */
+    gap: 50px; /* Adjust the gap between items */
+   
+  }
+
+
+  .age-group-img {
+    width: 150px; /* Adjust image size for tablets */
+  }
+  
+  .age-button {
+    padding: 8px 10px; /* Adjust button padding */
+  }
+
+
+}

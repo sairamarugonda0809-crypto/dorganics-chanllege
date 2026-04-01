@@ -1,0 +1,96 @@
+/* General page styling */
+.challenge-container {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+}
+
+.challenge-content {
+  margin-top: 10%;
+}
+
+/* Header styling */
+.challenge-header h1 {
+  color: #054b26;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 10%;
+}
+
+/* Main content styling */
+.challenge-content p {
+  font-size: 1rem;
+  color: #6d6d6d;
+  font-weight: 600;
+}
+
+.challenge-content h2 {
+  font-size: 30px;
+  color: #054b26;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+/* Image container */
+/* .image-container {
+  margin: 30px 0;
+} */
+
+.globe-image {
+  width: 100%; /* Make the image responsive */
+  max-width: 300px; /* Limit the maximum size */
+  height: auto;
+  object-fit: cover;
+}
+
+/* Button styling */
+.next-button {
+  background-color: #004d40;
+  color: white;
+  padding: 15px;
+  width: 400px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center content horizontally */
+  position: relative; /* Positioning context for the arrow */
+  margin-top: 20px; /* Space between the image and button */
+  padding: 10px 20px;
+}
+
+.arTow-icon {
+  position: absolute;
+  font-size: 2rem;
+  right: 20px;
+}
+
+.next-button:hover {
+  background-color: #00332a;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 480px) {
+  .challenge-content p {
+      margin-top: 30%; /* Adjust text spacing */
+  }
+
+  .image-container {
+    margin-top: 38%;
+  }
+
+  .next-button {
+      width: 280px; /* Adjust button width for smaller screens */
+      margin: 20px auto 0; /* Center the button with spacing after the image */
+      padding: 10px 15px;
+  }
+
+  .globe-image {
+      max-width: 100%; /* Ensure image adapts to screen width */
+      height: auto;
+  }
+}

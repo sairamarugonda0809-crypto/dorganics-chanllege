@@ -1,0 +1,201 @@
+.container {
+    padding: 175px; 
+    margin-left: 25%;
+}
+
+.container h2 {
+    font-size: 35px;
+    font-weight: bold; 
+    color: black;
+    width: 55%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -25px;
+}
+
+.checkbox-container {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    color: #333;
+    padding: 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 400px;
+    cursor: pointer; 
+    gap: 10px; 
+}
+
+.checkbox-container:hover {
+    background-color: rgb(239, 248, 242);
+    border-color: #00695c;
+}
+
+input[type="checkbox"] {
+    display: none; 
+}
+
+.custom-checkbox {
+    display: flex;
+    margin-top: -20px;
+    width: 20px;
+    justify-content: flex-end;
+    height: 20px;
+    border: 2px solid #00695c;
+    border-radius: 4px;
+    background-color: white;
+    position: relative;
+    margin-left: 350px;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #00695c;
+    border-color: #00695c;
+}
+
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '✓';
+    font-size: 16px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.onebutton {
+    padding: 15px 40px;
+    background-color: #004d40;
+    color: white;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex; 
+    align-items: center; 
+    position: relative; 
+    justify-content: center; 
+    margin-top: 30px;
+    margin-left: 5px;
+}
+
+.onebutton:hover {
+    background-color: #00695c; 
+}
+
+.onebutton span {
+    position: absolute; 
+    font-size: 2rem;
+    right: 20px;
+}
+
+.option-select {
+    color: #722f37; 
+    background-color: rgb(230 212 221); 
+    padding: 12px; 
+    margin-top: 20px; 
+    text-align: center; 
+    border-radius: 8px; 
+    width: 100%; 
+    max-width: 400px; 
+    font-size: 18px; 
+    font-weight: bold; 
+}
+
+
+/* Remove checkmark on hover */
+.checkbox-container:hover .custom-checkbox {
+    background-color: #f8f9fa; /* Reset to default background color */
+    border-color: #e0e0e0; /* Reset to default border color */
+}
+
+.checkbox-container:hover .custom-checkbox::after {
+    content: ''; /* Remove checkmark content */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 100px 20px; 
+        margin-left: 0; 
+    }
+
+    .container h2 {
+        font-size: 28px; 
+        width: 80%;
+    }
+
+    .checkbox-container {
+        font-size: 16px; 
+        max-width: 90%; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+
+    .onebutton {
+        width: 100%; 
+        padding: 12px 0; 
+        font-size: 1rem; 
+    }
+
+    .onebutton span {
+        font-size: 1.5rem; 
+        right: 10px; 
+    }
+
+    .option-select {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 80px 10px; 
+    }
+
+    .container h2 {
+        font-size: 24px; 
+        width: 90%;
+        margin-left: 25px;
+        margin-top: 40px;
+    }
+
+    .checkbox-container {
+        font-size: 12px; 
+    }
+
+    .onebutton {
+        width: 90%; 
+        font-size: 1rem; 
+        padding: 15px;
+        margin-bottom: 80px;
+        margin-left: 20px;
+    }
+
+    .onebutton span {
+        font-size: 1.5rem; 
+        right: 15px; 
+    }
+
+    .custom-checkbox {
+        margin-left: 260px;
+    }
+
+    .option-select {
+        font-size: 14px; 
+    }
+}
+/* Further reduce margin for very small screens */
+@media (max-width: 360px) {
+    .custom-checkbox {
+        margin-left: 220px;
+    }
+}

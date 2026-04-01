@@ -1,0 +1,218 @@
+
+.Event-container {
+    padding: 175px; /* Add padding for better spacing */
+    margin-left: 25%;
+}
+
+/* Heading styling */
+.Event-container h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: black;
+    width: 56%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -30px;
+    margin-left: 40px;
+}
+
+.Event-container h5 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: black;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-left:40px;
+}
+
+
+
+/* Label styling for the date picker */
+.Event-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px; /* Adjust the space between label and input */
+    margin-left: 40px;   /* Optional: Align the label with the input */
+    text-align: left;    /* Ensures the label is aligned to the left */
+}
+
+/* Date picker input styling */
+.Event-date-picker {
+    margin-left: 30px;
+    padding: 11px;
+    font-size: 20px;
+    background-color:#f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    width: 400px;
+    text-align: flex-start;
+    margin-top: 0px;  /* Add margin on top to ensure spacing between input and the label */
+}
+
+/* Date picker focus styling */
+.Event-date-picker:focus {
+    border-color: #004d40;
+    outline: none;
+}
+
+
+.privacy-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+    width: 77%;
+
+  }
+  
+  .lock-icon {
+    font-size: 16px;
+   
+  }
+
+  .privacy-info span{
+    margin-left: 5px;
+    font-size: 14px;
+  }
+ 
+
+
+  .privacy-link {
+    color:#00695c;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .privacy-link:hover {
+    color: #00695c;
+  }
+
+  .Event-button {
+    padding: 15px 40px;
+    background-color: #004d40;
+    color: white;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/* Button hover effect */
+.Event-button:hover {
+    background-color: #00695c; /* Darker on hover */
+}
+
+.Skip-button {
+    padding: 15px 40px;
+    background-color:rgb(212 230 219);
+    color: #00695c;
+    width: 400px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+/* Button hover effect */
+.Skip-button:hover {
+    background-color: #80A29D; /* Darker on hover */
+}
+
+.event-option-select {
+    color: #722f37;
+    background-color: rgb(230 212 221);
+    padding: 12px;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive styling for tablets */
+@media (max-width: 768px) {
+  .Event-container {
+      padding: 50px;
+      margin-left: 5%;
+  }
+
+  .Event-container h2, h5 {
+      width: 90%;
+      font-size: 28px;
+  }
+
+  .Event-label {
+      margin-left: 20px;
+      font-size: 12px;
+  }
+
+  .Event-date-picker, .Event-button, .Skip-button {
+      width: 90%;
+      margin-left: 5%;
+      font-size: 1rem;
+  }
+
+  .privacy-info {
+      width: 90%;
+      margin-left: 5%;
+      font-size: 12px;
+  }
+}
+
+/* Responsive styling for mobile devices */
+@media (max-width: 480px) {
+  .Event-container {
+      padding: 30px;
+      margin-left: 0;
+  }
+
+  .Event-container h2 {
+      font-size: 26px;
+      width: 100%;
+      margin-top: 90px;
+  }
+
+
+  .Event-container  h5 {
+    font-size: 15px;
+    width: 100%;
+}
+
+  .Event-label {
+      margin-left: 10px;
+      font-size: 12px;
+  }
+
+  .Event-date-picker, .Event-button, .Skip-button {
+      width: 100%;
+      margin-left: 0;
+      font-size: 1rem;
+  }
+
+  .privacy-info {
+      width: 100%;
+      margin-left: 10px;
+      font-size: 12px;
+  }
+}

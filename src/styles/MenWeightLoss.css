@@ -1,0 +1,97 @@
+.men-weight-loss-plan {
+    text-align: center;
+    padding-top: 150px;
+  }
+  
+
+  
+  .weight-plan-heading {
+    font-size: 2.2em;
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-weight: bold;
+
+  
+  }
+  
+  .sub-heading {
+    font-size: 1.2em;
+    color: #666;
+  }
+  
+  .sub-heading strong{
+    font-size: 1em;
+    color: #666;
+    font-weight: bold;
+
+  }
+  .quiz-text {
+    margin-bottom: 40px;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .quiz-text  strong{
+    color: #000;
+     font-weight: bold;
+  }
+  
+
+
+  .age-groups {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 100px;
+  }
+  
+  .age-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+  }
+  
+  
+ .age-group-img {
+    width: 200px;
+    height: auto;
+    border-radius: 100px 100px 0px 0px; 
+    background-color: rgba(0, 128, 0, 0.1); 
+    transition: all 0.3s ease;
+  }
+  
+  .age-button {
+    position: absolute;
+    bottom: -30px;
+    padding: 10px 80px;
+    background-color: #004d40;
+    color: white;
+    border: none;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    
+  }
+
+
+
+  .age-group button {
+    margin-top: -20px; 
+    
+  }
+  
+
+  .age-group-img:hover {
+    background-color: rgba(0, 128, 0, 0.2); 
+    transform: scale(1.05);
+  }
+  
+
+  .age-button:hover {
+    transform: scale(1.05);
+  }
+  
+

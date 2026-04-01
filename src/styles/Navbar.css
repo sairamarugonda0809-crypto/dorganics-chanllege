@@ -1,0 +1,177 @@
+
+  /*.navbar {
+      background-color: #fff; 
+      padding: 20px 50px; 
+      position: relative; 
+      display: flex;
+      align-items: center;
+      z-index: 10;
+    }
+    
+
+  
+  .no-border {
+    border-bottom: none; 
+  }
+  
+  .border {
+    border-bottom: 5px solid #ddd; 
+  }
+  
+  .navbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .back-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f2f2f2; 
+    border-radius: 50%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 600px; 
+  }
+  
+  .back-logo {
+    width: 40%; 
+    height: auto; 
+    font-weight: bold;
+  }
+  
+  .navbar-logo {
+    height: 50px; 
+    width: auto; 
+  }
+  
+
+
+  .navbar::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 5px;
+    background-color: #004d40;  
+    width: var(--border-width, 0); 
+    transition: width 0.3s ease; 
+}
+
+
+
+.no-border::after {
+  background-color: #fff; 
+  width: 100%; 
+}
+
+.border::after {
+  background-color: #004d40; 
+  width: var(--border-width, 50px);
+}
+  
+/* Laptop and Desktop 
+@media (min-width: 769px) {
+  .navbar::after {
+    width: calc(var(--border-width, 50px) + 50px);
+  }
+}*/
+/* General Navbar Styles */
+.navbar {
+  background-color: #fff;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0; /* Position it at the top of the viewport */
+  left: 0;
+  width: 100%; /* Ensure it spans the full width */
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.no-border {
+  border-bottom: none;
+}
+
+.border {
+  border-bottom: 5px solid #ddd;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.back-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #f2f2f2;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 60px;
+}
+
+.logo-img{
+  margin-right: 400px;
+}
+
+.back-icon a{
+  text-align: center;
+}
+.back-logo {
+  width: 40%;
+  height: auto;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  height: 50px;
+  width: auto;
+}
+
+/* Progress Bar */
+.navbar::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 5px;
+  background-color: #004d40;
+  width: var(--border-width, 0); /* Controls the progress bar width */
+  max-width: 100%; /* Ensures the bar doesn’t exceed the navbar width */
+  transition: width 0.3s ease;
+}
+
+.no-border::after {
+  background-color: #fff;
+  width: 100%;
+}
+
+.border::after {
+  background-color: #004d40;
+  width: var(--border-width, 50px);
+}
+
+/* Mobile-specific adjustments (up to 468px) */
+@media (max-width: 468px) {
+  .navbar {
+    padding: 10px 15px; /* Reduced padding for smaller screens */
+  }
+
+  .back-icon {
+    margin-right: 10px; /* Adjusted for smaller screens */
+  }
+
+  /* Ensure progress bar scales for mobile without affecting screen width */
+  .navbar::after {
+    width: calc(var(--border-width, 0) * 0.3); /* Smaller increments on mobile */
+  }
+}

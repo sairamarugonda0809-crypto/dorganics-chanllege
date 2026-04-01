@@ -1,0 +1,147 @@
+.ResultFirst-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  /* Styling the main heading */
+  .ResultFirst-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+    max-width: 20%; /* You can adjust this width as needed */
+    margin: 0 auto; /* Centers the heading */
+    word-wrap: break-word; /* Ensures long words break if necessary */
+    text-align: center; /* Optional: Centers the text */
+    margin-top: 100px;
+    
+  }
+  
+
+
+  .ResultFirst-button {
+    padding: 15px 40px;
+    background-color: #004d40;
+    color: white;
+    padding: 15px; 
+    width: 350px;
+    border: none;
+    border-radius: 10px ;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Positioning context for the arrow */
+    justify-content: center; /* Center content horiz*/
+    margin-top: 30px;
+    margin-left: 0px;
+  }
+  
+  .ResultFirst-button:hover {
+    background-color: #00382F;
+  }
+  
+
+  .ResultFirst-button span {
+    position: absolute; /* Adjust the gap between text and arrow */
+    font-size: 2rem;
+    right: 20px;
+  }
+
+  .ResultFirst-container img {
+    width: 370px; /* Set the width as needed */
+    height: auto; /* Maintain the aspect ratio */
+    margin-top: 20px; /* Optional: Add some margin for spacing */
+  }
+
+  .graph-container {
+    position: relative; /* This ensures the labels can be absolutely positioned relative to the graph */
+  }
+  
+  .current-weight, .desired-weight {
+    position: absolute; /* To position them on the graph */
+    font-size: 0.7rem; /* Adjust as needed */
+    background-color: white; /* Optional: Adds a background behind the label */
+    padding: 5px 5px; /* Padding for better readability */
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .current-weight {
+    top: 10%; /* Adjust this value to position it correctly */
+    left: 10%; /* Adjust this value to position it correctly */
+    color: red; /* Or any color to indicate current weight */
+  }
+  
+  .desired-weight {
+    top: 75%; /* Adjust this value to position it correctly */
+    left: 80%; /* Adjust this value to position it correctly */
+    color: green; /* Or any color to indicate desired weight */
+  }
+  
+
+  @media (max-width: 768px) {
+    .ResultFirst-container {
+        padding: 30px 10px; /* Reduce padding */
+    }
+    
+    .ResultFirst-container h2 {
+        font-size: 1.5rem; /* Reduce font size for smaller screens */
+        max-width: 90%; /* Increase max width for better fit */
+        margin-top: 80px; /* Adjust margin top */
+    }
+
+    .ResultFirst-button {
+        width: 80%; /* Make button width responsive */
+        font-size: 1rem; /* Reduce font size */
+        padding: 10px 20px; /* Adjust padding */
+    }
+
+    .ResultFirst-button span {
+        font-size: 1.5rem; /* Reduce arrow size */
+    }
+
+    .ResultFirst-container img {
+        width: 100%; /* Keep images responsive */
+    }
+
+    .current-weight, .desired-weight {
+        font-size: 0.6rem; /* Reduce font size for labels */
+    }
+}
+
+@media (max-width: 480px) {
+    .ResultFirst-container {
+        padding: 20px 5px; /* Further reduce padding */
+        margin-top: -50px;
+    }
+
+    .ResultFirst-container h2 {
+        font-size: 1.2rem; /* Further reduce font size */
+        margin-top: 60px; /* Adjust margin top */
+    }
+
+    .ResultFirst-button {
+      padding: 12px 20px; /* Reduce button padding */
+      font-size: 1rem; /* Smaller font size */
+      width: 250px;
+      padding: 15px; 
+    }
+
+    .ResultFirst-button span {
+        font-size: 1.5rem; /* Further reduce arrow size */
+    }
+
+    .graph-container img {
+      max-width: 320px; /* Further reduce graph image size for mobile */
+  }
+
+    .current-weight, .desired-weight {
+        font-size: 0.5rem; /* Further reduce font size for labels */
+    }
+}

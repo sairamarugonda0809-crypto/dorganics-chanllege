@@ -1,0 +1,64 @@
+.contact-us-container {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 120px;
+    padding-top: 60px;
+    font-family: 'Arial', sans-serif;
+}
+  .company-details{ 
+  
+    width: 30%;
+}
+
+.us-details {
+ width: 70%;
+ padding-top: 106px;
+
+}
+  
+  h2 {
+    font-size: 30px;
+    font-weight: 250;
+    margin-bottom: 60px;
+  }
+  
+  .detail-group h4 {
+    font-size: 16px;
+    font-weight: 550;
+    margin: 15px 0 5px;
+  }
+  
+  .detail-group p {
+    font-size: 13px;
+    font-weight: 100;
+    line-height: 1.6;
+  }
+  
+  .detail-group a {
+    color: #00aaff;
+    text-decoration: none;
+  }
+  
+  .detail-group a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Ensure the layout is responsive */
+  @media (max-width: 768px) {
+    .contact-us-container {
+      flex-direction: column;
+      padding: 40px;
+    }
+    
+    .company-details  {
+      width: 100%;
+      padding-top: 10px;
+      
+    }
+
+    .us-details{
+     padding-top: 0px;
+      margin-bottom: 20px;
+    }
+
+  }

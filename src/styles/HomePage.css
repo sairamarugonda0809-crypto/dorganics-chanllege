@@ -1,0 +1,164 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text-content {
+  position: absolute; /* Position text absolutely within the container */
+  top: 50%; /* Center the text vertically */
+  left: 35%; /* Center the text horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to center */
+  color: white; /* Text color */
+  text-align: center; /* Center text */
+  z-index: 1; /* Ensure text is above the image */
+  padding: 20px;
+}
+.headline {
+  font-size: 3rem; /* Adjust font size as per your preference */
+  font-weight: bold;
+  color: #333;
+
+  display: flex;
+  justify-content: flex-start;
+}
+.headline1 {
+  font-size: 3rem; /* Adjust font size as per your preference */
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.line-1 {
+  display: inline-block; /* Ensures it's treated as one block */
+}
+
+.line-2 {
+  display: block; /* Moves the second line directly below */
+  font-size: 2rem; /* Adjust size of second line */
+  margin-top: 0; /* No gap between lines */
+  margin-left: 0; /* Align the second line properly */
+}
+
+.sub-text {
+  font-size: 1.3rem;
+  color: #777;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.btn {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  background-color: #004d40; /* Dark green background */
+  color: white;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  min-width: 300px; /* Set the minimum width for both buttons */
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #00332c; /* Darker green on hover */
+}
+
+.image-background {
+  position: relative; /* Container for the image and text */
+  width: 100%; /* Full width */
+  height: 800px; /* Set a fixed height for the background image */
+  overflow: hidden;
+  margin-top: -0px; /* Adjusted margin to pull the image up closer to the navbar */
+  z-index: 0; /* Ensure it's below the navbar */
+}
+
+.home-img {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  margin-left: 300px;
+  position: relative; /* Ensure proper stacking context */
+  z-index: 0; /* Ensure it's below the navbar */
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    min-height: auto; /* You can set a specific min-height if needed */
+    height: 100vh; /* Set to full viewport height */
+  }
+
+  .home-section {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-content {
+    position: static;
+    top: auto; /* Removed autopx which is incorrect */
+    left: auto;
+    transform: none;
+    padding: 10px 20px;
+    text-align: center;
+  }
+
+  .headline {
+    font-size: 2rem;
+    justify-content: center;
+  }
+  .headline1 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+    justify-content: center;
+  }
+
+  .line-1 {
+    font-size: 1.8rem;
+  }
+  .line-2 {
+    font-size: 1.2rem;
+    margin-top: 5px;
+  }
+
+  .sub-text {
+    font-size: 1rem;
+    justify-content: center;
+  }
+
+  .button-group {
+    flex-direction: column; /* Corrected from 'c' to 'column' */
+    gap: 10px;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .btn {
+    min-width: auto;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .image-background {
+    height: 600px; /* Increased height for mobile */
+    width: 100%;
+  }
+
+  .home-img {
+    width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+}

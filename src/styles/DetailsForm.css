@@ -1,0 +1,131 @@
+.box-Container{
+display: flex;
+flex-direction: column;
+justify-content: flex-start; 
+align-items: center;
+background-color: #fff;
+margin: 0 auto;
+max-width: 1500px;
+padding-top: 150px; 
+min-height: calc(100vh - 150px);
+font-family: 'Arial', sans-serif; /* Match button font */
+}
+
+.box-Container h4{
+  font-size: 35px;
+  font-weight: bold;
+    color: black;
+    width: 55%;
+    text-align: center;
+    margin-bottom: 80px;
+    font-family: 'Arial', sans-serif; /* Match button font */
+}
+
+  .form-group {
+    margin-bottom: 30px;
+    
+  }
+    
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin-top: 3px;
+  
+  }
+  
+  .submit-button {
+    padding: 15px 40px;
+    background-color: #004d40;
+    color: white;
+    padding: 15px; 
+    width: 350px;
+    border: none;
+    border-radius: 10px ;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Positioning context for the arrow */
+    justify-content: center; /* Center content horiz*/
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif; /* Match button font */
+  }
+  
+  .submit-button:hover {
+    background-color: #00332e;
+  }
+  
+
+  /* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+  .box-Container h4 {
+    font-size: 28px; /* Smaller font size for mobile */
+    width: 80%; /* Wider width for mobile */
+  }
+
+  .form-group {
+    margin-bottom: 20px; /* Adjust margin for mobile */
+  }
+
+  input {
+    padding: 8px; /* Smaller padding for mobile */
+  }
+
+  .submit-button {
+    padding: 12px; /* Adjust padding for mobile */
+    font-size: 14px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .box-Container {
+    padding-top: 120px; /* Less padding on top for smaller devices */
+  }
+
+  .box-Container h4 {
+    font-size: 24px; /* Even smaller font size for smaller devices */
+    width: 90%; /* Full width for small devices */
+  }
+
+  .form-group {
+    margin-bottom: 25px; /* Further reduce margin for smaller devices */
+  }
+
+  input {
+    padding: 10px; /* Smaller padding for very small devices */
+  }
+
+  .submit-button {
+    margin-top: 70px;
+    padding: 15px; /* Adjust padding for very small devices */
+    font-size: 12px; /* Smaller font size for very small devices */
+    
+      width: 80%;
+      margin-left: 30px;
+    
+  }
+}
+
+/* Placeholder Styling */
+.details-input::placeholder {
+  font-family: 'Arial', sans-serif; /* Match the button font */
+  font-size: 14px; /* Adjust font size for readability */
+  color: #7f8c8d; /* Subtle color for better appearance */
+  opacity: 0.9; /* Slight transparency for a softer look */
+}
+
+/* Adjust for mobile screens */
+@media (max-width: 768px) {
+  .details-input::placeholder {
+    font-size: 12px; /* Smaller font size for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .details-input::placeholder {
+    font-size: 12px; /* Even smaller font size for very small devices */
+  }
+}
