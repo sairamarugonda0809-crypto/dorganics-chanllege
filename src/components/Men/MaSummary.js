@@ -70,32 +70,38 @@ const MaSummary = () => {
  
     if (
       !prevData ||
-      !height ||
-      !currentWeight ||
+      (!height && !formData?.height) ||
+      (!currentWeight && !formData?.currentWeight) ||
       !formData ||
       emailSentRef.current
     ) {
-      console.log("❌ BLOCKED BEFORE EMAIL SEND");
+      console.log("❌ BLOCKED BEFORE EMAIL SEND - Missing Critical Data");
       return;
     }
 
     console.log("✅ PASSED GUARD - WILL SEND EMAIL");
 
-    const heightInMeters = height?.cm
-      ? height.cm / 100
-      : convertToMeters(height?.feet || 0, height?.inches || 0);
-    const bmi = currentWeight / (heightInMeters * heightInMeters);
+    // Use currentWeight from root or formData
+    const weightToUse = currentWeight || formData?.currentWeight;
+    
+    // Use height from root or formData
+    const hObj = height || formData?.height;
+    const heightInMeters = hObj?.cm
+      ? hObj.cm / 100
+      : convertToMeters(hObj?.feet || 0, hObj?.inches || 0);
+    
+    const bmiValue = weightToUse / (heightInMeters * heightInMeters);
 
     let bmiCategory = "Normal";
     let bodyImg = null;
     let risksMessage = "Good BMI to tone up and get your dream body.";
 
-    if (bmi < 18.5) {
+    if (bmiValue < 18.5) {
       bmiCategory = "Underweight";
       risksMessage = "Reach a healthy weight to avoid health risks.";
-    } else if (bmi < 24.9) {
+    } else if (bmiValue < 24.9) {
       bodyImg = bodyImage3;
-    } else if (bmi < 29.9) {
+    } else if (bmiValue < 29.9) {
       bmiCategory = "Overweight";
       bodyImg = bodyImage2;
       risksMessage = "Increased risk of heart issues and chronic pain.";
@@ -105,20 +111,21 @@ const MaSummary = () => {
       risksMessage = "High risk of heart attack, stroke, and diabetes.";
     }
 
-    setBmiData({ bmiCategory, bmi: bmi.toFixed(1), risksMessage, bodyImg });
+    setBmiData({ bmiCategory, bmi: bmiValue.toFixed(1), risksMessage, bodyImg });
 
+    // Map your EmailJS template keys to the data found in your object
     const templateParams = {
       gender: gender || formData?.gender || "N/A",
-      user_email: email || "N/A",
-      user_name: name || "N/A",
-      contact: contact || "N/A",
-      bmi: bmi.toFixed(1) || "N/A",
+      user_email: email || formData?.email || "N/A",
+      user_name: name || formData?.name || "N/A",
+      contact: contact || formData?.contact || "N/A",
+      bmi: bmiValue.toFixed(1) || "N/A",
       bmi_category: bmiCategory || "N/A",
-      current_weight: currentWeight || "N/A",
-      desired_weight: desiredWeight || "N/A",
-      height: height?.cm
-        ? `${height.cm} cm`
-        : `${height?.feet || 0} ft ${height?.inches || 0} in`,
+      current_weight: weightToUse || "N/A",
+      desired_weight: desiredWeight || formData?.desiredWeight || "N/A",
+      height: hObj?.cm
+        ? `${hObj.cm} cm`
+        : `${hObj?.feet || 0} ft ${hObj?.inches || 0} in`,
       selected_goal: goal || formData?.goal || "N/A",
       selected_body_type: bodyType || formData?.bodyType || "N/A",
       desired_body_type: desiredBody || formData?.desiredBody || "N/A",
@@ -127,7 +134,7 @@ const MaSummary = () => {
       selected_habits: selectedHabits || formData?.selectedHabits || "N/A",
       confidence_log: confidenceLog || formData?.confidenceLog || "N/A",
       tiredness_level: tirednessLevel || formData?.tirednessLevel || "N/A",
-      age: currentAge || formData?.currentAge || "N/A",
+      age: currentAge || formData?.currentAge || ageGroup || "N/A",
       sleep_duration: sleepDuration || formData?.sleepDuration || "N/A",
       water_intake: waterIntake || formData?.waterIntake || "N/A",
       selected_meats: Array.isArray(selectedMeats) ? selectedMeats.join(", ") : (selectedMeats || "N/A"),
@@ -136,7 +143,7 @@ const MaSummary = () => {
       event_date: eventDate || formData?.eventDate || "N/A",
     };
 
-    console.log("📤 templateParams:", templateParams);
+    console.log("📤 Final templateParams being sent:", templateParams);
 
     const handleEmailSend = async () => {
       try {
@@ -149,11 +156,8 @@ const MaSummary = () => {
         );
         console.log("✅ Email sent!", response);
         emailSentRef.current = true;
-        // localStorage.removeItem("userData");
       } catch (error) {
-        console.error("❌ Email failed full:", error);
-        console.error("❌ status:", error?.status);
-        console.error("❌ text:", error?.text);
+        console.error("❌ Email failed:", error);
       }
     };
 
@@ -219,4 +223,4 @@ const MaSummary = () => {
   );
 };
 
-export default MaSummary; 
+export default MaSummary;

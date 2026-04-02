@@ -13,6 +13,7 @@ import React, { useState, useEffect, useRef } from "react"; // Added useEffect a
 
 	  // Retrieve data from location.state
 const userData = JSON.parse(localStorage.getItem("userData")) || {};
+
 const {
   name = "",
   contact = "",
@@ -21,6 +22,27 @@ const {
   height = "",
   desiredWeight = "",
 } = userData.formData || {};
+
+// ✅ ADD THIS (full access to all other fields)
+const {
+  gender = "",
+  ageGroup = "",
+  goal = "",
+  bodyType = "",
+  desiredBody = "",
+  exercisePreference = "",
+  dailyRoutine = "",
+  confidenceLog = "",
+  selectedHabits = "",
+  tirednessLevel = "",
+  currentAge = "",
+  sleepDuration = "",
+  waterIntake = "",
+  selectedMeats = [],
+  selectedFoods = [],
+  selectedOccasion = "",
+  eventDate = "",
+} = userData;
 
 	  // Added BMI calculation helper (previously in MaSummary)
 	  const convertToMeters = (feet, inches) => (feet * 12 + inches) * 0.0254;
@@ -46,21 +68,43 @@ const {
 	      else bmiCategory = "Obese";
 	    }
 
-	    const templateParams = {
-	      user_name: name,
-	      user_email: email,
-	      contact: contact,
-	      bmi: bmiValue,
-	      bmi_category: bmiCategory,
-	      current_weight: currentWeight,
-	      desired_weight: desiredWeight,
-	      height: height?.cm ? `${height.cm} cm` : `${height?.feet} ft ${height?.inches} in`,
-	      gender: userData.gender || "N/A",
-	      goal: userData.goal || "N/A",
-	      age: userData.currentAge || "N/A",
-	    };
+const templateParams = {
+  user_name: name,
+  user_email: email,
+  contact: contact,
+  bmi: bmiValue,
+  bmi_category: bmiCategory,
+  current_weight: currentWeight,
+  desired_weight: desiredWeight,
+  height: height?.cm ? `${height.cm} cm` : `${height?.feet} ft ${height?.inches} in`,
 
-	    const handleEmailSend = async () => {
+  gender: gender || "N/A",
+
+  // ✅ MATCH TEMPLATE EXACTLY
+  selected_goal: goal || "N/A",
+  selected_body_type: bodyType || "N/A",
+  desired_body_type: desiredBody || "N/A",
+  selected_routine: dailyRoutine || "N/A",
+
+  exercise_preference: exercisePreference || "N/A",
+  selected_habits: selectedHabits || "N/A",
+  confidence_log: confidenceLog || "N/A",
+  tiredness_level: tirednessLevel || "N/A",
+
+  age: currentAge || ageGroup || "N/A",
+  sleep_duration: sleepDuration || "N/A",
+  water_intake: waterIntake || "N/A",
+
+  selected_meats: Array.isArray(selectedMeats)
+    ? selectedMeats.join(", ")
+    : selectedMeats || "N/A",
+
+  selected_foods: Array.isArray(selectedFoods) && selectedFoods.length > 0
+  ? selectedFoods.join(", ")
+  : (userData?.formData?.selectedFoods?.join(", ") || "N/A"),
+  selected_occasion: selectedOccasion || "N/A",
+  event_date: eventDate || "N/A",
+};	    const handleEmailSend = async () => {
 	      try {
 	        await send("service_qxfs2ci", "template_uxwot6g", templateParams, "Uh6r7Lar2GwxiYyiA");
 	        emailSentRef.current = true;
