@@ -67,7 +67,7 @@ const MaSummary = () => {
     console.log("contact:", contact);
     console.log("===== DEBUG END =====");
     // 🔴 DEBUG END
-
+ // 🔴 DEBUG END
     // if (
     //   !prevData ||
     //   !height ||
