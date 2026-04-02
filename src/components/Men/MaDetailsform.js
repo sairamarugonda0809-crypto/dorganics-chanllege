@@ -33,7 +33,7 @@ const MaDetailsForm = () => {
     };
     localStorage.setItem("userData", JSON.stringify(updatedData));
     console.log("user data ===>", updatedData);
-    navigate("/MaUserSelection");
+    navigate("/ResultSe");
   };
 
   return (

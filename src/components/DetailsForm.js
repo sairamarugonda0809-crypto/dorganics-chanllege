@@ -71,7 +71,7 @@ const DetailsForm = () => {
   };
   localStorage.setItem("userData", JSON.stringify(updatedData));
   console.log("female contact", updatedData);
-  navigate("/FeUserSelection");
+  navigate("/ResultSe");
 };
 
 

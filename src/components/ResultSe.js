@@ -1,6 +1,7 @@
-	import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react"; // Added useEffect and useRef
 	import { useLocation, useNavigate } from "react-router-dom";
 	import axios from "axios";
+	import { send } from "emailjs-com"; // Added emailjs-com import
 	import Result1 from "../../src/images/graph.webp";
 	import "../../src/styles/ResultSe.css";
 	import "normalize.css";
@@ -8,6 +9,7 @@
 	const ResultSe = () => {
 	  const location = useLocation();
 	  const navigate = useNavigate();
+	  const emailSentRef = useRef(false); // Added useRef to prevent duplicate emails
 
 	  // Retrieve data from location.state
 const userData = JSON.parse(localStorage.getItem("userData")) || {};
@@ -19,6 +21,57 @@ const {
   height = "",
   desiredWeight = "",
 } = userData.formData || {};
+
+	  // Added BMI calculation helper (previously in MaSummary)
+	  const convertToMeters = (feet, inches) => (feet * 12 + inches) * 0.0254;
+
+	  // Added useEffect to handle the logic from the skipped screens
+	  useEffect(() => {
+	    if (emailSentRef.current || !email || !name) return;
+
+	    const heightInMeters = height?.cm
+	      ? height.cm / 100
+	      : convertToMeters(height?.feet || 0, height?.inches || 0);
+	    
+	    const bmiValue = (currentWeight && heightInMeters) 
+	      ? (currentWeight / (heightInMeters * heightInMeters)).toFixed(1) 
+	      : "N/A";
+
+	    let bmiCategory = "Normal";
+	    if (bmiValue !== "N/A") {
+	      const bmiNum = parseFloat(bmiValue);
+	      if (bmiNum < 18.5) bmiCategory = "Underweight";
+	      else if (bmiNum < 24.9) bmiCategory = "Normal";
+	      else if (bmiNum < 29.9) bmiCategory = "Overweight";
+	      else bmiCategory = "Obese";
+	    }
+
+	    const templateParams = {
+	      user_name: name,
+	      user_email: email,
+	      contact: contact,
+	      bmi: bmiValue,
+	      bmi_category: bmiCategory,
+	      current_weight: currentWeight,
+	      desired_weight: desiredWeight,
+	      height: height?.cm ? `${height.cm} cm` : `${height?.feet} ft ${height?.inches} in`,
+	      gender: userData.gender || "N/A",
+	      goal: userData.goal || "N/A",
+	      age: userData.currentAge || "N/A",
+	    };
+
+	    const handleEmailSend = async () => {
+	      try {
+	        await send("service_qxfs2ci", "template_uxwot6g", templateParams, "Uh6r7Lar2GwxiYyiA");
+	        emailSentRef.current = true;
+	        console.log("✅ Email sent automatically on results load");
+	      } catch (error) {
+	        console.error("❌ Email failed:", error);
+	      }
+	    };
+
+	    handleEmailSend();
+	  }, [name, email, height, currentWeight, userData]);
 
 
 	  const [isTermsAccepted, setIsTermsAccepted] = useState(false);

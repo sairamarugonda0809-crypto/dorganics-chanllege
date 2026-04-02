@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import emailjs from "@emailjs/browser";
+import { send } from "emailjs-com";
 import "../../styles/FeSummary.css";
 import scale from "../../images/scale.webp";
 import scale2 from "../../images/scale-overweight.webp";
@@ -15,7 +15,6 @@ import FrImage from "../../images/frequency-icon.webp";
 const FeSummary = () => {
   const navigate = useNavigate();
   const [bmiData, setBmiData] = useState(null);
-  const [isSending, setIsSending] = useState(false);
   const prevData = JSON.parse(localStorage.getItem("userData"));
   const {
     gender,
@@ -119,63 +118,64 @@ const FeSummary = () => {
       risksMessage,
       bodyImg,
     });
-  }, []);
-
-  const handleNextClick = async () => {
-    if (isSending) return;
-    setIsSending(true);
 
     const templateParams = {
-      gender: gender || "N/A",
-      user_email: email || "N/A",
-      user_name: name || "N/A",
-      contact: contact || "N/A",
-      bmi: bmiData?.bmi || "N/A",
-      bmi_category: bmiData?.bmiCategory || "N/A",
-      current_weight: currentWeight || "N/A",
-      desired_weight: desiredWeight || "N/A",
-      height: height?.cm
+      gender: gender,
+      user_email: email,
+      user_name: name,
+      contact: contact,
+      bmi: bmi.toFixed(1),
+      bmi_category: bmiCategory,
+      current_weight: currentWeight,
+      desired_weight: desiredWeight,
+      height: height.cm
         ? `${height.cm} cm`
-        : `${height?.feet || 0} ft ${height?.inches || 0} in`,
-      selected_goal: goal || "N/A",
-      selected_body_type: bodyType || "N/A",
-      desired_body_type: desiredBody || "N/A",
-      selected_routine: selectedRoutine || "N/A",
-      exercise_preference: exercisePreference || "N/A",
-      selected_habits: selectedHabits || "N/A",
-      confidence_log: confidenceLog || "N/A",
-      tiredness_level: tirednessLevel || "N/A",
-      age: currentAge || "N/A",
-      sleep_duration: sleepDuration || "N/A",
-      water_intake: waterIntake || "N/A",
-      selected_meats: selectedMeats || "N/A",
-      selected_foods: selectedFoods || "N/A",
-      selected_occasion: selectedOccasion || "N/A",
-      event_date: selectedEvent || "N/A",
+        : `${height.feet} ft ${height.inches} in`,
+      selected_goal: goal,
+      selected_body_type: bodyType,
+      desired_body_type: desiredBody,
+      selected_routine: selectedRoutine,
+      exercise_preference: exercisePreference,
+      selected_habits: selectedHabits,
+      confidence_log: confidenceLog,
+      tiredness_level: tirednessLevel,
+      age: currentAge,
+      sleep_duration: sleepDuration,
+      water_intake: waterIntake,
+      selected_meats: selectedMeats,
+      selected_foods: selectedFoods,
+      selected_occasion: selectedOccasion,
+      event_date: selectedEvent,
     };
 
-    try {
-      await emailjs.send(
-        "service_qxfs2ci",
-        "template_uxwot6g",
-        templateParams,
-        { publicKey: "Uh6r7Lar2GwxiYyiA" }
-      );
-      console.log("Email sent successfully!");
-    } catch (error) {
-      console.error("Failed to send email:", error);
-    } finally {
-      setIsSending(false);
-      const prevData = JSON.parse(localStorage.getItem("userData")) || {};
-      const updateData = { ...prevData };
-      localStorage.setItem("userData", JSON.stringify(updateData));
-      navigate("/ResultSe");
-    }
-  };
+    const handleEmailSend = async () => {
+      try {
+        await send(
+          "service_qxfs2ci",
+          "template_uxwot6g",
+          templateParams,
+          "Uh6r7Lar2GwxiYyiA"
+        );
+        console.log("Email sent successfully!");
+        // localStorage.removeItem("userData");
+      } catch (error) {
+        console.error("Failed to send email:", error);
+      }
+    };
+
+    handleEmailSend();
+  }, []);
 
   if (!bmiData) {
     return <h2>Loading...</h2>;
   }
+
+  const handleSubmit = () => {
+    const prevData = JSON.parse(localStorage.getItem("userData"));
+    const updateData = { ...prevData };
+    localStorage.setItem("userData", JSON.stringify(updateData));
+    navigate("/ResultSe");
+  };
   return (
     <div className="FeSummary-wrapper">
       <h2>Your personal summary</h2>
@@ -193,8 +193,8 @@ const FeSummary = () => {
               bmiData.bmiCategory === "Normal"
                 ? scale3
                 : bmiData.bmiCategory === "Overweight"
-                ? scale2
-                : scale
+                  ? scale2
+                  : scale
             }
             alt="scale"
             className="scale-image"
@@ -231,15 +231,10 @@ const FeSummary = () => {
         </div>
       </div>
 
-      <button
-        className="FeSummary-button"
-        onClick={handleNextClick}
-        disabled={isSending}
-      >
-        {isSending ? "Sending..." : "Next"}<span>›</span>
+      <button className="FeSummary-button" onClick={handleSubmit}>
+        Next<span>›</span>
       </button>
     </div>
   );
 };
-
-export default FeSummary;
+ export default FeSummary;
