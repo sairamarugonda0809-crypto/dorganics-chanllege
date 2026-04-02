@@ -67,17 +67,17 @@ const MaSummary = () => {
     console.log("contact:", contact);
     console.log("===== DEBUG END =====");
     // 🔴 DEBUG END
- // 🔴 DEBUG END
-    // if (
-    //   !prevData ||
-    //   !height ||
-    //   !currentWeight ||
-    //   !formData ||
-    //   emailSentRef.current
-    // ) {
-    //   console.log("❌ BLOCKED BEFORE EMAIL SEND");
-    //   return;
-    // }
+ 
+    if (
+      !prevData ||
+      !height ||
+      !currentWeight ||
+      !formData ||
+      emailSentRef.current
+    ) {
+      console.log("❌ BLOCKED BEFORE EMAIL SEND");
+      return;
+    }
 
     console.log("✅ PASSED GUARD - WILL SEND EMAIL");
 
@@ -108,7 +108,7 @@ const MaSummary = () => {
     setBmiData({ bmiCategory, bmi: bmi.toFixed(1), risksMessage, bodyImg });
 
     const templateParams = {
-      gender: gender || "N/A",
+      gender: gender || formData?.gender || "N/A",
       user_email: email || "N/A",
       user_name: name || "N/A",
       contact: contact || "N/A",
@@ -119,21 +119,21 @@ const MaSummary = () => {
       height: height?.cm
         ? `${height.cm} cm`
         : `${height?.feet || 0} ft ${height?.inches || 0} in`,
-      selected_goal: goal || "N/A",
-      selected_body_type: bodyType || "N/A",
-      desired_body_type: desiredBody || "N/A",
-      selected_routine: dailyRoutine || "N/A",
-      exercise_preference: exercisePreference || "N/A",
-      selected_habits: selectedHabits || "N/A",
-      confidence_log: confidenceLog || "N/A",
-      tiredness_level: tirednessLevel || "N/A",
-      age: currentAge || "N/A",
-      sleep_duration: sleepDuration || "N/A",
-      water_intake: waterIntake || "N/A",
-      selected_meats: selectedMeats || "N/A",
-      selected_foods: selectedFoods || "N/A",
-      selected_occasion: selectedOccasion || "N/A",
-      event_date: eventDate || "N/A",
+      selected_goal: goal || formData?.goal || "N/A",
+      selected_body_type: bodyType || formData?.bodyType || "N/A",
+      desired_body_type: desiredBody || formData?.desiredBody || "N/A",
+      selected_routine: dailyRoutine || formData?.dailyRoutine || "N/A",
+      exercise_preference: exercisePreference || formData?.exercisePreference || "N/A",
+      selected_habits: selectedHabits || formData?.selectedHabits || "N/A",
+      confidence_log: confidenceLog || formData?.confidenceLog || "N/A",
+      tiredness_level: tirednessLevel || formData?.tirednessLevel || "N/A",
+      age: currentAge || formData?.currentAge || "N/A",
+      sleep_duration: sleepDuration || formData?.sleepDuration || "N/A",
+      water_intake: waterIntake || formData?.waterIntake || "N/A",
+      selected_meats: Array.isArray(selectedMeats) ? selectedMeats.join(", ") : (selectedMeats || "N/A"),
+      selected_foods: Array.isArray(selectedFoods) ? selectedFoods.join(", ") : (selectedFoods || "N/A"),
+      selected_occasion: selectedOccasion || formData?.selectedOccasion || "N/A",
+      event_date: eventDate || formData?.eventDate || "N/A",
     };
 
     console.log("📤 templateParams:", templateParams);
@@ -219,4 +219,4 @@ const MaSummary = () => {
   );
 };
 
-export default MaSummary;
+export default MaSummary; 
